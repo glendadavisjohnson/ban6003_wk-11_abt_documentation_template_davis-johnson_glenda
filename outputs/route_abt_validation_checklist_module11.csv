@@ -1,0 +1,9 @@
+check,result,status,notes
+Duplicate route keys (origin + dest),0,Pass,Each route appears once
+"Missing key values (origin, dest)",0,Pass,Every row has both key values
+Missing ABT cells (all columns),25,Documented,"dest_airport_name, dest_lat and dest_lon are missing for 7 routes; the delay and air time columns are missing for EWR to LGA; see data dictionary notes"
+"Nonpositive flight counts, distances and air times",0,Pass,No impossible values found
+Routes with a negative max_arr_delay,4,Documented,4 routes with only 1 flight that arrived early; not an error; see max_arr_delay notes
+Missing target values (avg_arr_delay),1,Documented,Missing for EWR to LGA because its only flight was cancelled; see avg_arr_delay notes
+ABT columns without a dictionary row,0,Pass,Every ABT column has a dictionary row
+Blank data dictionary cells,0,Pass,All four documentation fields are filled for every column
